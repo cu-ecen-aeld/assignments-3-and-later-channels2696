@@ -120,7 +120,7 @@ bool do_exec_redirect(const char *outputfile, int count, ...)
 */
     int kidpid;
     int status;
-    int fd = open(outputfile, O_WRONLY|O_TRUNC|O_CREAT, 0644);
+    int fd = open(outputfile, O_WRONLY|O_TRUNC|O_CREAT, 0777);
     if (fd < 0) { return false;}
       switch (kidpid = fork()) {
         case -1: return false;
